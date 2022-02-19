@@ -1,0 +1,26 @@
+@import "../../../scss/variables.scss";
+
+.Header {
+  padding: 23px;
+  border-bottom: 1px solid $header-border;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &ChainStatus {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .Header {
+    &Logo {
+      max-width: 124px;
+    }
+
+    &ChainStatus {
+      display: none;
+    }
+  }
+}
