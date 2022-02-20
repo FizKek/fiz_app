@@ -1,7 +1,7 @@
 @import "../../scss/variables.scss";
 
 .Gallery {
-  margin-top: 140px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   background-color: #22252c;
@@ -46,9 +46,10 @@
     margin-top: 100px;
     display: grid;
     justify-items: center;
+    flex-direction: row;
     gap: 32px 30px;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    grid-template-rows: repeat(2, 1fr);
+    //grid-template-columns: repeat(auto-fill, minmax(260px, 2fr));
+    //grid-template-rows: repeat(2, 2fr);
   }
 }
 

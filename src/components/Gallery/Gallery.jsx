@@ -6,40 +6,48 @@ import {
   GalleryGrid,
 } from "./Gallery.module.scss";
 
-import {CardDeck} from "./CardDeck";
+import {Card, CardGroup} from "react-bootstrap";
+import React from "react";
 
-const fakeData = {
-  contract: {
-    logo: "https://app.onbridge.io/img/favicon.ico",
-    name: "Guild NFT Vault",
-  },
-  tokens: [
-    {
-      colectionName: "Unofficial Punks",
-      name: "Cryptonatrix ",
-      imageSrc:
-        "https://lh3.googleusercontent.com/ZQG5lomHgYynSNFZwDFETow-i6BxtJ7AIb5AUHkjH-PbGHKpzEIq5J0g-ohtFeB-gvu2QTMBUkVo2aKS_GnzZc-X3nIWiRLVwzcpfw=w600",
-      network: "mainnet",
-    },
-  ],
-};
-const { contract } = fakeData;
+import { Button } from "../Button/Button"
+
+const links = [
+  "https://drive.google.com/file/d/1MOXpy0pAwYItolHRPZNosxcD4wYV1YMG/preview",
+  "https://drive.google.com/file/d/1UZ11rrD3kyOkLr3oTgszF9sdYLAmp53X/preview",
+  "https://drive.google.com/file/d/1PY_Hb1sL4WusSZVVtvfVH1oCCixX7VJj/preview",
+  "https://drive.google.com/file/d/1TPiZTaI7ljZV4g_F-B690T1c_bes1Fa-/preview",
+  "https://drive.google.com/file/d/1a1JI3sFJxa8hra0heZKpG2KnJ8mj89Z4/preview",
+  "https://drive.google.com/file/d/1W-eC9He6SPgvxzAMDjWqOk5j_bI06cU0/preview"
+]
 
 export function Gallery() {
-
   return (
     <div className={GalleryStyled}>
       <div className={GalleryHead}>
-        <div className={GalleryHeadTitle}>{contract.name}</div>
+        <div className={GalleryHeadTitle}>Vault with available NFT</div>
         <div className={GalleryHeadCounter}>
         </div>
       </div>
 
       <div className={GalleryGrid}>
-        <CardDeck/>
-        <CardDeck/>
-        <CardDeck/>
+        <CardGroup>
+          {Array.from({ length: 6 }).map((_, idx) => (
+              <Card>
+                <iframe
+                    src={links[idx]}
+                    width="320" height="240" allow="autoplay"/>
+                <Card.Body>
+                  <Card.Title>Card title</Card.Title>
+                  <Button> Lease </Button>
+                  <Card.Footer> <br/><br/> </Card.Footer>
+                </Card.Body>
+              </Card>
+          ))}
+        </CardGroup>
       </div>
+
+      <br/><br/><br/>
+      <Button> Claim NFT and rental fees </Button>
     </div>
   );
 }
