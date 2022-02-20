@@ -6,6 +6,8 @@ import {
   Link
 } from "react-router-dom";
 
+import { Web3Status } from '../../components'
+
 import { MainWrapper } from '../../components/MainWrapper/MainWrapper'
 import { Button } from "../../components/Button/Button";
 import styles from './DivCentered.module.css'
