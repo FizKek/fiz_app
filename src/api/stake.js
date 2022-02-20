@@ -1,10 +1,10 @@
 import erc_721_token from "../abis/ERC721Token.json";
-import nft_staking  from "../abis/NFTStaking.json";
+import nft_staking from "../abis/NFTStaking.json";
 import { ethers } from "ethers";
 import { ERC721TokenAddress, NFTStakingAddress } from "../constants";
 
 function timeout(delay) {
-  return new Promise( res => setTimeout(res, delay) );
+  return new Promise((res) => setTimeout(res, delay));
 }
 
 export async function stake(tokenId) {

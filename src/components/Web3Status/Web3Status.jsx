@@ -3,7 +3,7 @@ import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core";
 
 import { injected } from "../../utils/web3/connectors";
 import { useEagerConnect, useInactiveListener } from "../../utils/web3/hooks";
-import { Button } from "../Button/Button"
+import { Button } from "../Button/Button";
 
 const connectorsByName = {
   Injected: {
@@ -74,8 +74,7 @@ export function Web3Status({ type, ...props }) {
         <>
           <h3></h3>
           <br />
-          <span>
-          </span>
+          <span></span>
         </>
       );
     }
