@@ -8,7 +8,9 @@ import { Web3Status } from "../../";
 export function Header() {
   return (
     <div className={HeaderStyled}>
-      <p><strong>FizContracts</strong></p>
+      <p>
+        <strong>FizContracts</strong>
+      </p>
       <Web3Status className={HeaderChainStatus} />
     </div>
   );

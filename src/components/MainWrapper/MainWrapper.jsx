@@ -1,10 +1,10 @@
-import { Header } from './Header/Header'
-import { Footer } from './Footer/Footer'
+import { Header } from "./Header/Header";
+import { Footer } from "./Footer/Footer";
 
 import {
   MainWrapper as MainWrapperStyled,
   MainWrapperContent,
-} from './MainWrapper.module.scss'
+} from "./MainWrapper.module.scss";
 
 export function MainWrapper({ children }) {
   return (
@@ -13,5 +13,5 @@ export function MainWrapper({ children }) {
       <div className={MainWrapperContent}>{children}</div>
       <Footer />
     </div>
-  )
+  );
 }

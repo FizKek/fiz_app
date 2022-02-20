@@ -11,6 +11,7 @@
     "axios": "0.24.0",
     "classnames": "2.3.1",
     "ethers": "5.5.1",
+    "jslint": "^0.12.1",
     "node-sass": "6.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -22,7 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "npx prettier --write \"{,!(node_modules)/**/}*.{ts,tsx,js,jsx}\""
   },
   "eslintConfig": {
     "extends": [

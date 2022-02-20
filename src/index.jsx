@@ -8,7 +8,6 @@ import { getLibrary } from "./utils/web3/getLibrary";
 
 import { ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
 
-
 ReactDOM.render(
   <React.StrictMode>
     <ErrorBoundary>

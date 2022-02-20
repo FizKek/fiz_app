@@ -1,1 +1,1 @@
-export { Web3Status } from './Web3Status/Web3Status'
+export { Web3Status } from "./Web3Status/Web3Status";
