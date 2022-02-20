@@ -41,17 +41,17 @@ export function Web3Status({ type, ...props }) {
         {wrongNetwork && connector === injected ? "Wrong network" : "Error"}
       </div>
     ) : (
-      <div type={type}>Connect wallet</div>
+      <div type={type}></div>
     );
 
   const StatusContent = () => {
     if (error instanceof UnsupportedChainIdError) {
-      return <span>Wrong Network</span>;
+      return <span>""</span>;
     }
 
     const TryAgain = () => (
       <>
-        <span>Error</span>
+        <span>""</span>
         <button
           onClick={() => {
             if (connector === injected) {
@@ -71,23 +71,22 @@ export function Web3Status({ type, ...props }) {
 
       return (
         <>
-          <h3>Connected with MetaMask</h3>
+          <h3></h3>
           <br />
           <span>
-            * For disconnect, please use Metamask and disconnect this account -{" "}
-            {account}
+
           </span>
         </>
       );
     }
 
     if (error) {
-      return <span>Error. Try to reload the page.</span>;
+      return <span>""</span>;
     }
 
     return (
       <>
-        <h4>Connect to a wallet</h4>
+        <h4></h4>
         {Object.keys(connectorsByName).map((name) => {
           const currentConnector = connectorsByName[name].connector;
           const activating = currentConnector === activatingConnector;

@@ -11,7 +11,9 @@ export function Header() {
       <p>
         <strong>FizContracts</strong>
       </p>
-      <Web3Status className={HeaderChainStatus} />
+      <Web3Status className={HeaderChainStatus}>
+
+          </Web3Status>
     </div>
   );
 }
