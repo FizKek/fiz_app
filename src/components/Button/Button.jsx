@@ -1,5 +1,19 @@
-import { Button as ButtonStyled } from "./Button.module.scss";
+import classnames from 'classnames'
 
-export function Button({ children, onClick }) {
-  return <button className={ButtonStyled} onClick={onClick}>{children}</button>;
+import { Button as ButtonStyled, ButtonDisabled } from './Button.module.scss'
+
+export function Button({ className, children, disabled, onClick, ...props }) {
+  const classNames = classnames(ButtonStyled, className, {
+    [ButtonDisabled]: disabled,
+  })
+
+  return (
+      <button
+          className={classNames}
+          onClick={() => !disabled && onClick()}
+          {...props}
+      >
+        {children}
+      </button>
+  )
 }

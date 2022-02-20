@@ -6,7 +6,6 @@ import {
     GalleryHead,
     GalleryHeadTitle,
     GalleryHeadCounter,
-    GalleryGrid,
 } from "../../components/Gallery/Gallery.module.scss";
 import {Button} from "../../components/Button/Button";
 
@@ -36,11 +35,25 @@ export function Scholar() {
                         <Card.Body>
                             <Card.Title>NFT TOKEN #{idx}</Card.Title>
                         </Card.Body>
-                        <Button> Rent </Button>
+                        <Button
+                            id="rentButton" onClick={() => {
+                            const inner = document.getElementById("rentButton").innerHTML;
+                            if (inner === 'Rent') {
+                                document.getElementById("rentButton").innerHTML = 'Rented'
+                            } else {
+                                document.getElementById("rentButton").innerHTML = 'Rent'
+                            }
+                        }}> Rent </Button>
                         <Card.Footer> <br/><br/> </Card.Footer>
                     </Card>
                 ))}
             </CardGroup>
         </div>
     );
+}
+
+function change() // no ';' here
+{
+    const elem = document.getElementById("buttonRent");
+    elem.value = "Rented"
 }
