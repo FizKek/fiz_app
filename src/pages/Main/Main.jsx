@@ -6,9 +6,13 @@ import {
   Link
 } from "react-router-dom";
 
-import {MainWrapper} from '../../components/MainWrapper/MainWrapper'
+import { MainWrapper } from '../../components/MainWrapper/MainWrapper'
 import { Button } from "../../components/Button/Button";
 import styles from './DivCentered.module.css'
+
+import { Manager } from '../Manager/Manager'
+import { Scholar } from '../Scholar/Scholar'
+import { Provider } from '../Provider/Provider'
 
 // import {Gallery} from "../../components/Gallery/Gallery";
 
@@ -39,17 +43,17 @@ export function Main() {
                 </Route>
                 <Route path="/manager">
                   <div className={styles.Div}>
-                        Manager
+                    <Manager/>
                   </div>
                 </Route>
                 <Route path="/scholar">
                   <div className={styles.Div}>
-                    Scholar
+                    <Scholar/>
                   </div>
                 </Route>
                 <Route path="/provider">
                   <div className={styles.Div}>
-                    Provider
+                    <Provider/>
                   </div>
                 </Route>
             </Switch>
@@ -57,12 +61,4 @@ export function Main() {
       }
     </MainWrapper>
   )
-}
-
-function About() {
-  return (
-      <div className={styles.Div}>
-        <h2>About</h2>
-      </div>
-  );
 }
