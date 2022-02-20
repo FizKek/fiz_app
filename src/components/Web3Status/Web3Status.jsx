@@ -3,6 +3,7 @@ import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core";
 
 import { injected } from "../../utils/web3/connectors";
 import { useEagerConnect, useInactiveListener } from "../../utils/web3/hooks";
+import { Button } from "../Button/Button"
 
 const connectorsByName = {
   Injected: {
@@ -41,18 +42,18 @@ export function Web3Status({ type, ...props }) {
         {wrongNetwork && connector === injected ? "Wrong network" : "Error"}
       </div>
     ) : (
-      <div type={type}>Connect wallet</div>
+      <div type={type}></div>
     );
 
   const StatusContent = () => {
     if (error instanceof UnsupportedChainIdError) {
-      return <span>Wrong Network</span>;
+      return <span></span>;
     }
 
     const TryAgain = () => (
       <>
-        <span>Error</span>
-        <button
+        <span></span>
+        <Button
           onClick={() => {
             if (connector === injected) {
               deactivate();
@@ -60,7 +61,7 @@ export function Web3Status({ type, ...props }) {
           }}
         >
           Try again
-        </button>
+        </Button>
       </>
     );
 
@@ -71,10 +72,9 @@ export function Web3Status({ type, ...props }) {
 
       return (
         <>
-          <h3>Connected with MetaMask</h3>
+          <h3></h3>
           <br />
           <span>
-            * For disconnect, please use Metamask and disconnect this account -{" "}
             {account}
           </span>
         </>
@@ -87,7 +87,7 @@ export function Web3Status({ type, ...props }) {
 
     return (
       <>
-        <h4>Connect to a wallet</h4>
+        <h4></h4>
         {Object.keys(connectorsByName).map((name) => {
           const currentConnector = connectorsByName[name].connector;
           const activating = currentConnector === activatingConnector;
@@ -101,13 +101,13 @@ export function Web3Status({ type, ...props }) {
           };
 
           return (
-            <button disabled={disabled} key={name} onClick={connectFunction}>
+            <Button disabled={disabled} key={name} onClick={connectFunction}>
               {connectorsByName[name].text}&nbsp;
               <span>
                 {activating && <span>(waiting...)</span>}
                 {connected && <span>(connected)</span>}
               </span>
-            </button>
+            </Button>
           );
         })}
       </>
