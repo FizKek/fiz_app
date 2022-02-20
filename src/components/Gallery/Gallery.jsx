@@ -1,16 +1,9 @@
-import { useEffect, useState } from "react";
-
-// import Modal from "../TokenInfoPopUp/TokenInfoPopUp";
-
-// import { getTokensInfo } from "../../api/fetchTokens";
 import {
   Gallery as GalleryStyled,
   GalleryHead,
   GalleryHeadTitle,
-  GalleryHeadLogo,
   GalleryHeadCounter,
   GalleryGrid,
-  GalleryChainStatus,
 } from "./Gallery.module.scss";
 
 import {CardDeck} from "./CardDeck";
@@ -33,16 +26,12 @@ const fakeData = {
 const { contract } = fakeData;
 
 export function Gallery() {
-  const [tokensList, setTokensList] = useState([]);
-  const [change, setChange] = useState(true);
 
   return (
     <div className={GalleryStyled}>
-      {/*<Web3Status className={GalleryChainStatus} />*/}
       <div className={GalleryHead}>
         <div className={GalleryHeadTitle}>{contract.name}</div>
         <div className={GalleryHeadCounter}>
-          {/*{tokensList && tokensList.length} items*/}
         </div>
       </div>
 
@@ -50,7 +39,6 @@ export function Gallery() {
         <CardDeck/>
         <CardDeck/>
         <CardDeck/>
-        {/*<TokensList tokens={tokensList} setChange={setChange} change={change} />*/}
       </div>
     </div>
   );
