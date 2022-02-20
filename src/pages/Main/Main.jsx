@@ -16,7 +16,6 @@ export function Main() {
     <MainWrapper>
       {
         // provider? <Gallery />:<LackOfMetamask></LackOfMetamask>
-        // <Gallery />
         <Router>
           <Switch>
             <Route exact path="/">

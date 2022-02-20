@@ -1,0 +1,89 @@
+@import "../../../scss/variables.scss";
+
+.GalleryItem {
+  display: flex;
+  flex-direction: column;
+  background-color: $card-bg;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 260px;
+
+  height: 100%;
+  cursor: pointer;
+
+  &Text {
+    font-size: 15px;
+  }
+
+  &Picture {
+    width: 100%;
+    height: 260px;
+  }
+
+  &Info {
+    margin: 20px;
+
+    &Head {
+      line-height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid $border;
+    }
+
+    &Foot {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+
+  &SpecsWrapper {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+    display: grid;
+    gap: 15px 12px;
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+    grid-template-rows: repeat(1, 1fr);
+  }
+
+  &Spec {
+    display: flex;
+    flex-direction: column;
+
+    &Label {
+      font-weight: normal;
+      font-size: 13px;
+      color: $secondary-text;
+      margin-bottom: 5px;
+    }
+
+    &Value {
+      font-weight: normal;
+      font-size: 15px;
+
+      &Link {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &BridgeInfo {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  &NetworkLogo {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
