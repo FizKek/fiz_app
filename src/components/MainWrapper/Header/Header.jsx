@@ -4,6 +4,7 @@ import {
   HeaderChainStatus,
 } from "./Header.module.scss";
 import { Web3Status } from "../../";
+import {Button} from "../../Button/Button";
 
 export function Header() {
   return (
@@ -11,9 +12,11 @@ export function Header() {
       <p>
         <strong>FizContracts</strong>
       </p>
-      <Web3Status className={HeaderChainStatus}>
+
+        <Web3Status className={HeaderChainStatus}>
 
           </Web3Status>
+
     </div>
   );
 }

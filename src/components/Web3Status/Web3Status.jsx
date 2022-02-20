@@ -3,6 +3,9 @@ import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core";
 
 import { injected } from "../../utils/web3/connectors";
 import { useEagerConnect, useInactiveListener } from "../../utils/web3/hooks";
+// import {Button as ButtonStyled} from "*.module.scss";
+
+import { Button as ButtonStyled } from "../Button/Button.module.scss";
 
 const connectorsByName = {
   Injected: {
@@ -46,7 +49,7 @@ export function Web3Status({ type, ...props }) {
 
   const StatusContent = () => {
     if (error instanceof UnsupportedChainIdError) {
-      return <span>""</span>;
+      return <span></span>;
     }
 
     const TryAgain = () => (
@@ -58,7 +61,7 @@ export function Web3Status({ type, ...props }) {
               deactivate();
             }
           }}
-        >
+          className={ButtonStyled}>
           Try again
         </button>
       </>
@@ -100,12 +103,13 @@ export function Web3Status({ type, ...props }) {
           };
 
           return (
-            <button disabled={disabled} key={name} onClick={connectFunction}>
+            <button disabled={disabled} key={name} onClick={connectFunction} className={ButtonStyled}>
               {connectorsByName[name].text}&nbsp;
               <span>
                 {activating && <span>(waiting...)</span>}
                 {connected && <span>(connected)</span>}
               </span>
+
             </button>
           );
         })}
