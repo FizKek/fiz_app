@@ -1,0 +1,29 @@
+@import '../../scss/variables.scss';
+
+.Button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 17px;
+  background-color: $main-color;
+  color: $dark-text;
+  font-size: 18px;
+  line-height: 22px;
+  cursor: pointer;
+  transition: 0.3s all;
+
+  &:hover {
+    background-color: $button-hover;
+    transition: 0.3 all;
+  }
+
+  &Disabled {
+    background-color: $disabled-text;
+    color: $secondary-text;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: $disabled-text;
+      color: $secondary-text;
+    }
+  }
+}
