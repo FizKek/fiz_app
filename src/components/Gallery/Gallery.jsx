@@ -90,9 +90,7 @@ export function Gallery() {
     <div className={GalleryStyled}>
       {/*<Web3Status className={GalleryChainStatus} />*/}
       <div className={GalleryHead}>
-        <div className={GalleryHeadTitle}>
-          {contract.name}
-        </div>
+        <div className={GalleryHeadTitle}>{contract.name}</div>
         <div className={GalleryHeadCounter}>
           {tokensList && tokensList.length} items
         </div>

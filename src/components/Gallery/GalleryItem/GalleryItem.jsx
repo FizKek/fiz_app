@@ -15,7 +15,7 @@ import {
   GalleryItemBridgeInfo,
 } from "./GalleryItem.module.scss";
 import styles from "../../../pages/Main/DivCentered.module.css";
-import {Gallery} from "../Gallery";
+import { Gallery } from "../Gallery";
 
 import { shortenAddress } from "../../../utils/web3";
 import Networks from "../../../networks.json";
@@ -37,10 +37,10 @@ export function GalleryItem({
   toggleModal,
 }) {
   return (
-      <div className={styles.Div}>
-        <h2>Cell empty</h2>
-        <Gallery />
-      </div>
+    <div className={styles.Div}>
+      <h2>Cell empty</h2>
+      <Gallery />
+    </div>
   );
   const blockExplorer = Networks[tokensChainId].blockExplorer;
 
@@ -50,7 +50,8 @@ export function GalleryItem({
       onClick={() => {
         setCurrentItem({ tokenId, owner, skill, change, tokensChainId, image });
         toggleModal();
-      }}>
+      }}
+    >
       <img src={image} alt="Token" className={GalleryItemPicture} />
       <div className={GalleryItemInfo}>
         <div className={GalleryItemInfoHead}>OnBridge Pirate #{tokenId}</div>
@@ -63,7 +64,8 @@ export function GalleryItem({
                 <Link
                   className={GalleryItemSpecValueLink}
                   target="_blank"
-                  href={`${blockExplorer}/address/${owner}`}>
+                  href={`${blockExplorer}/address/${owner}`}
+                >
                   {shortenAddress(owner)}
                 </Link>
               </div>
