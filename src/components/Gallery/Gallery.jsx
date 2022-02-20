@@ -12,15 +12,8 @@ import {
   GalleryGrid,
   GalleryChainStatus,
 } from "./Gallery.module.scss";
-import { GalleryItem } from "./GalleryItem/GalleryItem";
 
-import useModal from "../../utils/hooks/useModal";
-import {Card, Col, Row} from "react-bootstrap";
-import {MainWrapper as MainWrapperStyled} from "../MainWrapper/MainWrapper.module.scss";
-import {Header} from "../MainWrapper/Header/Header";
-import {Footer} from "../MainWrapper/Footer/Footer";
 import {CardDeck} from "./CardDeck";
-// import { Web3Status } from "..";
 
 const fakeData = {
   contract: {
@@ -39,57 +32,9 @@ const fakeData = {
 };
 const { contract } = fakeData;
 
-function TokensList({ tokens, change, setChange }) {
-  const [currentItem, setCurrentItem] = useState({
-    change: true,
-    owner: "0x5fCb8f7149E8aD03544157C90E6f81b26933d3a2",
-    skill: 0,
-    tokenId: 0,
-    tokensChainId: 97,
-    image: "",
-  });
-  const { isShowing, toggle } = useModal();
-
-  return (
-    <>
-      {tokens &&
-        tokens.map(({ token_id, owner, image, chain_id, skill }) => {
-          return (
-            <GalleryItem
-              key={token_id}
-              tokenId={token_id}
-              owner={owner}
-              image={image}
-              chainId={chain_id}
-              skill={skill}
-              change={change}
-              setChange={setChange}
-              setCurrentItem={setCurrentItem}
-              toggleModal={toggle}
-            />
-          );
-        })}
-      {/*<Modal*/}
-      {/*  isShowing={isShowing}*/}
-      {/*  hide={toggle}*/}
-      {/*  modalActive={isShowing}*/}
-      {/*  currentItem={currentItem}*/}
-      {/*  change={change}*/}
-      {/*  setChange={setChange}*/}
-      {/*/>*/}
-    </>
-  );
-}
-
 export function Gallery() {
   const [tokensList, setTokensList] = useState([]);
   const [change, setChange] = useState(true);
-
-  // useEffect(() => {
-  //   getTokensInfo().then((res) => {
-  //     setTokensList(res);
-  //   });
-  // }, [change]);
 
   return (
     <div className={GalleryStyled}>
@@ -97,11 +42,13 @@ export function Gallery() {
       <div className={GalleryHead}>
         <div className={GalleryHeadTitle}>{contract.name}</div>
         <div className={GalleryHeadCounter}>
-          {tokensList && tokensList.length} items
+          {/*{tokensList && tokensList.length} items*/}
         </div>
       </div>
 
       <div className={GalleryGrid}>
+        <CardDeck/>
+        <CardDeck/>
         <CardDeck/>
         {/*<TokensList tokens={tokensList} setChange={setChange} change={change} />*/}
       </div>
