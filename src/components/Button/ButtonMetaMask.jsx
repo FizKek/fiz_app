@@ -1,7 +1,7 @@
 import { Button as ButtonStyled} from './Button.module.scss'
 import { useConnect, useAccount } from 'wagmi'
 
-export function Button({children}) {
+export function ButtonMetaMask({children}) {
     const [{ data, error }, connect] = useConnect()
     const [{ data: accountData }, disconnect] = useAccount({
         fetchEns: true,

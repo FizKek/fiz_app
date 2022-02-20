@@ -4,14 +4,14 @@ import {
   HeaderChainStatus,
 } from "./Header.module.scss";
 
-import {Button} from "../../Button/Button";
+import {ButtonMetaMask} from "../../Button/ButtonMetaMask";
 
 export function Header() {
   return (
     <div className={HeaderStyled}>
       <p><strong>FizContracts</strong></p>
-          <Button>
-          </Button>
+          <ButtonMetaMask>
+          </ButtonMetaMask>
     </div>
   );
 }
