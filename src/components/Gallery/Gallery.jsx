@@ -15,6 +15,11 @@ import {
 import { GalleryItem } from "./GalleryItem/GalleryItem";
 
 import useModal from "../../utils/hooks/useModal";
+import {Card, Col, Row} from "react-bootstrap";
+import {MainWrapper as MainWrapperStyled} from "../MainWrapper/MainWrapper.module.scss";
+import {Header} from "../MainWrapper/Header/Header";
+import {Footer} from "../MainWrapper/Footer/Footer";
+import {CardDeck} from "./CardDeck";
 // import { Web3Status } from "..";
 
 const fakeData = {
@@ -97,7 +102,8 @@ export function Gallery() {
       </div>
 
       <div className={GalleryGrid}>
-        <TokensList tokens={tokensList} setChange={setChange} change={change} />
+        <CardDeck/>
+        {/*<TokensList tokens={tokensList} setChange={setChange} change={change} />*/}
       </div>
     </div>
   );

@@ -21,7 +21,6 @@
     padding-bottom: 24px;
     margin-bottom: 24px;
     border-bottom: 1px solid $border;
-    display: flex;
     align-items: center;
 
     &Title {
@@ -44,6 +43,7 @@
   }
 
   &Grid {
+    margin-top: 100px;
     display: grid;
     justify-items: center;
     gap: 32px 30px;
