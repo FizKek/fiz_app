@@ -75,7 +75,6 @@ export function Web3Status({ type, ...props }) {
           <h3></h3>
           <br />
           <span>
-            {account}
           </span>
         </>
       );

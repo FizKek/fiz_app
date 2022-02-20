@@ -2,6 +2,8 @@ import styles from "../Main/DivCentered.module.css";
 import React from "react";
 import {Card, CardGroup} from "react-bootstrap";
 
+import { stake } from "../../api/stake";
+
 import {
     Gallery as GalleryStyled,
     GalleryHead,
@@ -20,6 +22,10 @@ const links = [
     "https://drive.google.com/file/d/1W-eC9He6SPgvxzAMDjWqOk5j_bI06cU0/preview"
 ]
 
+const stakeHandler = () => {
+  stake(1)
+};
+
 export function Provider() {
     return (
         <div className={GalleryStyled}>
@@ -37,7 +43,18 @@ export function Provider() {
                         <Card.Body>
                             <Card.Title>NFT TOKEN #{idx}</Card.Title>
                         </Card.Body>
-                        <Button> Stake </Button>
+                        <Button id={"stakeButton" + idx.toString()}onClick={stakeHandler}> Stake </Button>
+
+                        {/* <Button
+                            id="rentButton" onClick={() => {
+                            const inner = document.getElementById("rentButton").innerHTML;
+                            if (inner === 'Rent') {
+                                document.getElementById("rentButton").innerHTML = 'Rented'
+                            } else {
+                                document.getElementById("rentButton").innerHTML = 'Rent'
+                            }
+                        }}> Rent </Button> */}
+                        
                         <Card.Footer> <br/><br/> </Card.Footer>
                     </Card>
                 ))}
@@ -45,3 +62,4 @@ export function Provider() {
         </div>
     );
 }
+
